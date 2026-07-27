@@ -5,7 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MTH MCH CENTER - Doctors Display Slider</title>
-  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/png"
+    href="./Images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
@@ -255,6 +256,7 @@
       }
     }
 
+    /* ── Fixed: logo capped at 80px, never scales with vw on large screens ── */
     .top-bar {
       position: absolute;
       top: 0;
@@ -264,14 +266,20 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 24px 32px;
+      padding: 20px 28px;
       pointer-events: none;
+      max-height: 80px;
+      overflow: hidden;
     }
 
     .top-logo {
-      width: clamp(65px, 7vw, 95px);
-      height: auto;
+      width: 70px;
+      height: 70px;
+      max-width: 70px;
+      max-height: 70px;
+      object-fit: contain;
       filter: drop-shadow(0 4px 20px rgba(219, 39, 119, 0.2)) drop-shadow(0 4px 16px rgba(30, 64, 175, 0.2));
+      flex-shrink: 0;
     }
 
     .top-clock {
@@ -279,10 +287,11 @@
       flex-direction: column;
       align-items: flex-end;
       gap: 2px;
+      flex-shrink: 0;
     }
 
     .clock-time {
-      font-size: clamp(1.4rem, 2vw, 2rem);
+      font-size: clamp(1.2rem, 1.6vw, 1.8rem);
       font-weight: 700;
       color: rgba(255, 255, 255, 0.7);
       font-variant-numeric: tabular-nums;
@@ -290,14 +299,13 @@
     }
 
     .clock-date {
-      font-size: clamp(0.6rem, 0.8vw, 0.8rem);
+      font-size: clamp(0.55rem, 0.7vw, 0.75rem);
       font-weight: 500;
       color: rgba(255, 255, 255, 0.25);
       text-transform: uppercase;
       letter-spacing: 2px;
     }
 
-    /* ── Fast transition for 3s slides ── */
     .doctor-slide {
       position: absolute;
       width: 100%;
@@ -1123,6 +1131,13 @@
       .nav-arrow-right {
         right: 12px;
       }
+
+      .top-logo {
+        width: 55px;
+        height: 55px;
+        max-width: 55px;
+        max-height: 55px;
+      }
     }
 
     @media (max-width: 768px) {
@@ -1214,6 +1229,18 @@
       .nav-arrow svg {
         width: 16px;
         height: 16px;
+      }
+
+      .top-logo {
+        width: 45px;
+        height: 45px;
+        max-width: 45px;
+        max-height: 45px;
+      }
+
+      .top-bar {
+        padding: 14px 16px;
+        max-height: 60px;
       }
     }
 
@@ -1396,11 +1423,11 @@
         services: ['Diagnostics & Prescription', 'Patient Management', 'Follow-up Care']
       },
       {
-        name: 'Dr. Alazar Wogayehu',
+        name: 'Dr. Alazar',
         title: 'Medical Director | Pediatric Specialist',
         degree: 'MD Pediatrics',
         experience: '5+ Years Experience',
-        speciality: 'PEDIATRICIAN',
+        speciality: 'PEDIATRICS',
         image: './Images/Dr.Alazar.JPG',
         services: ['Emergency Pediatric Support', 'Neonatal Care', 'Child Health & Development']
       }
@@ -1485,8 +1512,7 @@
     const slides = document.querySelectorAll('.doctor-slide');
     const dots = document.querySelectorAll('.nav-dot');
 
-    /* 3 seconds per doctor */
-    const slideDuration = 3000;
+    const slideDuration = 8000;
     let current = 0;
     let isTransitioning = false;
     let progressRAF = null;
@@ -1504,7 +1530,6 @@
       dots.forEach((d, i) => d.classList.toggle('active', i === idx));
     }
 
-    /* Faster GSAP animations tuned for 3s slides */
     function animateActiveSlide() {
       const active = slides[current];
       if (!active) return;
@@ -1661,25 +1686,19 @@
 
     function updateClock() {
       const now = new Date();
+      const h = String(now.getHours()).padStart(2, '0');
+      const m = String(now.getMinutes()).padStart(2, '0');
+      const s = String(now.getSeconds()).padStart(2, '0');
+      document.getElementById('clockTime').textContent = `${h}:${m}:${s}`;
 
-      document.getElementById("clockTime").textContent =
-        now.toLocaleTimeString("en-US", {
-          hour: "2-digit",
-          minute: "2-digit",
-          hour12: true
-        });
-
-      document.getElementById("clockDate").textContent =
-        now.toLocaleDateString("en-US", {
-          weekday: "long",
-          year: "numeric",
-          month: "long",
-          day: "numeric"
-        });
+      const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      document.getElementById('clockDate').textContent =
+        `${days[now.getDay()]}, ${months[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`;
     }
 
     updateClock();
-    setInterval(updateClock, 600);
+    setInterval(updateClock, 2000);
 
     showSlide(0);
   </script>
