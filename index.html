@@ -5,8 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MTH MCH CENTER - Doctors Display Slider</title>
-  <link rel="icon" type="image/png"
-    href="./Images/favicon.png">
+  <link rel="icon" type="image/png" href="https://z-cdn-media.chatglm.cn/files/f9160f0c-4faf-46ac-bfcf-d9aca75d1270.png?auth_key=1884900534-67b0268b44144af7b098f71f7c7ab833-0-add77187443bdc9073b7c304409eca53">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
@@ -75,23 +74,10 @@
     }
 
     @keyframes ambientDrift {
-
-      0%,
-      100% {
-        transform: translate(0, 0);
-      }
-
-      25% {
-        transform: translate(5%, 5%);
-      }
-
-      50% {
-        transform: translate(-5%, 10%);
-      }
-
-      75% {
-        transform: translate(5%, -5%);
-      }
+      0%, 100% { transform: translate(0, 0); }
+      25% { transform: translate(5%, 5%); }
+      50% { transform: translate(-5%, 10%); }
+      75% { transform: translate(5%, -5%); }
     }
 
     .ambient-orb {
@@ -129,19 +115,9 @@
     }
 
     @keyframes orbFloat {
-
-      0%,
-      100% {
-        transform: translate(0, 0) scale(1);
-      }
-
-      33% {
-        transform: translate(20px, -15px) scale(1.05);
-      }
-
-      66% {
-        transform: translate(-15px, 20px) scale(0.95);
-      }
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(20px, -15px) scale(1.05); }
+      66% { transform: translate(-15px, 20px) scale(0.95); }
     }
 
     .ecg-line {
@@ -150,10 +126,7 @@
       opacity: 0.06;
     }
 
-    .ecg-line svg {
-      width: 100%;
-      height: 100%;
-    }
+    .ecg-line svg { width: 100%; height: 100%; }
 
     .ecg-path {
       stroke: var(--secondary-light);
@@ -175,13 +148,8 @@
     }
 
     @keyframes ecgDraw {
-      0% {
-        stroke-dashoffset: 1200;
-      }
-
-      100% {
-        stroke-dashoffset: 0;
-      }
+      0% { stroke-dashoffset: 1200; }
+      100% { stroke-dashoffset: 0; }
     }
 
     .particle {
@@ -191,26 +159,12 @@
       animation: particleFloat 10s ease-in-out infinite;
     }
 
-    .particle.pink {
-      background: rgba(244, 114, 182, 0.2);
-    }
-
-    .particle.blue {
-      background: rgba(96, 165, 250, 0.2);
-    }
+    .particle.pink { background: rgba(244, 114, 182, 0.2); }
+    .particle.blue { background: rgba(96, 165, 250, 0.2); }
 
     @keyframes particleFloat {
-
-      0%,
-      100% {
-        transform: translateY(0) scale(1);
-        opacity: 0.15;
-      }
-
-      50% {
-        transform: translateY(-30px) scale(1.1);
-        opacity: 0.3;
-      }
+      0%, 100% { transform: translateY(0) scale(1); opacity: 0.15; }
+      50% { transform: translateY(-30px) scale(1.1); opacity: 0.3; }
     }
 
     .floating-shape {
@@ -220,13 +174,8 @@
       animation: shapeFloat 14s ease-in-out infinite;
     }
 
-    .floating-shape.pink {
-      color: var(--secondary-light);
-    }
-
-    .floating-shape.blue {
-      color: var(--accent-blue);
-    }
+    .floating-shape.pink { color: var(--secondary-light); }
+    .floating-shape.blue { color: var(--accent-blue); }
 
     .floating-shape svg {
       width: 100%;
@@ -235,28 +184,15 @@
     }
 
     @keyframes shapeFloat {
-
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-20px);
-      }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
     }
 
     @keyframes shapeSpin {
-      from {
-        transform: rotate(0deg);
-      }
-
-      to {
-        transform: rotate(360deg);
-      }
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
 
-    /* ── Fixed: logo capped at 80px, never scales with vw on large screens ── */
     .top-bar {
       position: absolute;
       top: 0;
@@ -268,17 +204,15 @@
       justify-content: space-between;
       padding: 20px 28px;
       pointer-events: none;
-      max-height: 80px;
-      overflow: hidden;
     }
 
+    /* FIXED: capped at 72px so it never overlaps doctor photos on any screen size */
     .top-logo {
-      width: 70px;
-      height: 70px;
-      max-width: 70px;
-      max-height: 70px;
+      width: 72px;
+      max-width: 72px;
+      height: auto;
       object-fit: contain;
-      filter: drop-shadow(0 4px 20px rgba(219, 39, 119, 0.2)) drop-shadow(0 4px 16px rgba(30, 64, 175, 0.2));
+      filter: drop-shadow(0 4px 16px rgba(219, 39, 119, 0.15)) drop-shadow(0 4px 12px rgba(30, 64, 175, 0.15));
       flex-shrink: 0;
     }
 
@@ -287,7 +221,6 @@
       flex-direction: column;
       align-items: flex-end;
       gap: 2px;
-      flex-shrink: 0;
     }
 
     .clock-time {
@@ -360,17 +293,8 @@
     }
 
     @keyframes photoGlow {
-
-      0%,
-      100% {
-        opacity: 0.5;
-        transform: scale(1);
-      }
-
-      50% {
-        opacity: 0.8;
-        transform: scale(1.03);
-      }
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.03); }
     }
 
     .pulse-ring {
@@ -394,15 +318,8 @@
     }
 
     @keyframes sonarPulse {
-      0% {
-        transform: scale(0.98);
-        opacity: 0.6;
-      }
-
-      100% {
-        transform: scale(1.15);
-        opacity: 0;
-      }
+      0% { transform: scale(0.98); opacity: 0.6; }
+      100% { transform: scale(1.15); opacity: 0; }
     }
 
     .photo-frame {
@@ -450,13 +367,8 @@
     }
 
     @keyframes photoShimmer {
-      0% {
-        left: -100%;
-      }
-
-      100% {
-        left: 200%;
-      }
+      0% { left: -100%; }
+      100% { left: 200%; }
     }
 
     .photo-frame::after {
@@ -491,10 +403,7 @@
       opacity: 0.5;
     }
 
-    .photo-ecg svg {
-      width: 100%;
-      height: 100%;
-    }
+    .photo-ecg svg { width: 100%; height: 100%; }
 
     .photo-ecg-path {
       stroke: var(--secondary-light);
@@ -543,10 +452,7 @@
       justify-content: center;
     }
 
-    .speciality-icon svg {
-      width: 20px;
-      height: 20px;
-    }
+    .speciality-icon svg { width: 20px; height: 20px; }
 
     .corner-deco {
       position: absolute;
@@ -562,89 +468,21 @@
       border-radius: 1px;
     }
 
-    .corner-deco.tl {
-      top: 12px;
-      left: 12px;
-    }
+    .corner-deco.tl { top: 12px; left: 12px; }
+    .corner-deco.tl::before { width: 16px; height: 2px; top: 0; left: 0; background: rgba(96, 165, 250, 0.3); }
+    .corner-deco.tl::after { width: 2px; height: 16px; top: 0; left: 0; background: rgba(96, 165, 250, 0.3); }
 
-    .corner-deco.tl::before {
-      width: 16px;
-      height: 2px;
-      top: 0;
-      left: 0;
-      background: rgba(96, 165, 250, 0.3);
-    }
+    .corner-deco.tr { top: 12px; right: 12px; }
+    .corner-deco.tr::before { width: 16px; height: 2px; top: 0; right: 0; background: rgba(96, 165, 250, 0.3); }
+    .corner-deco.tr::after { width: 2px; height: 16px; top: 0; right: 0; background: rgba(96, 165, 250, 0.3); }
 
-    .corner-deco.tl::after {
-      width: 2px;
-      height: 16px;
-      top: 0;
-      left: 0;
-      background: rgba(96, 165, 250, 0.3);
-    }
+    .corner-deco.bl { bottom: 12px; left: 12px; }
+    .corner-deco.bl::before { width: 16px; height: 2px; bottom: 0; left: 0; background: rgba(244, 114, 182, 0.3); }
+    .corner-deco.bl::after { width: 2px; height: 16px; bottom: 0; left: 0; background: rgba(244, 114, 182, 0.3); }
 
-    .corner-deco.tr {
-      top: 12px;
-      right: 12px;
-    }
-
-    .corner-deco.tr::before {
-      width: 16px;
-      height: 2px;
-      top: 0;
-      right: 0;
-      background: rgba(96, 165, 250, 0.3);
-    }
-
-    .corner-deco.tr::after {
-      width: 2px;
-      height: 16px;
-      top: 0;
-      right: 0;
-      background: rgba(96, 165, 250, 0.3);
-    }
-
-    .corner-deco.bl {
-      bottom: 12px;
-      left: 12px;
-    }
-
-    .corner-deco.bl::before {
-      width: 16px;
-      height: 2px;
-      bottom: 0;
-      left: 0;
-      background: rgba(244, 114, 182, 0.3);
-    }
-
-    .corner-deco.bl::after {
-      width: 2px;
-      height: 16px;
-      bottom: 0;
-      left: 0;
-      background: rgba(244, 114, 182, 0.3);
-    }
-
-    .corner-deco.br {
-      bottom: 12px;
-      right: 12px;
-    }
-
-    .corner-deco.br::before {
-      width: 16px;
-      height: 2px;
-      bottom: 0;
-      right: 0;
-      background: rgba(244, 114, 182, 0.3);
-    }
-
-    .corner-deco.br::after {
-      width: 2px;
-      height: 16px;
-      bottom: 0;
-      right: 0;
-      background: rgba(244, 114, 182, 0.3);
-    }
+    .corner-deco.br { bottom: 12px; right: 12px; }
+    .corner-deco.br::before { width: 16px; height: 2px; bottom: 0; right: 0; background: rgba(244, 114, 182, 0.3); }
+    .corner-deco.br::after { width: 2px; height: 16px; bottom: 0; right: 0; background: rgba(244, 114, 182, 0.3); }
 
     .right-section {
       width: 50%;
@@ -691,9 +529,7 @@
     }
 
     @keyframes nameShine {
-      to {
-        background-position: 200% center;
-      }
+      to { background-position: 200% center; }
     }
 
     .doctor-name::after {
@@ -857,10 +693,7 @@
       color: var(--accent-blue);
     }
 
-    .service-icon svg {
-      width: 18px;
-      height: 18px;
-    }
+    .service-icon svg { width: 18px; height: 18px; }
 
     .service-text {
       font-size: clamp(0.88rem, 1.2vw, 1.2rem);
@@ -910,22 +743,10 @@
       transform: translateY(-50%) scale(1.08);
     }
 
-    .nav-arrow:active {
-      transform: translateY(-50%) scale(0.95);
-    }
-
-    .nav-arrow svg {
-      width: 20px;
-      height: 20px;
-    }
-
-    .nav-arrow-left {
-      left: clamp(16px, 2.5vw, 36px);
-    }
-
-    .nav-arrow-right {
-      right: clamp(16px, 2.5vw, 36px);
-    }
+    .nav-arrow:active { transform: translateY(-50%) scale(0.95); }
+    .nav-arrow svg { width: 20px; height: 20px; }
+    .nav-arrow-left { left: clamp(16px, 2.5vw, 36px); }
+    .nav-arrow-right { right: clamp(16px, 2.5vw, 36px); }
 
     .nav-dots {
       position: absolute;
@@ -1013,9 +834,7 @@
       transition: color 0.3s ease;
     }
 
-    .contact-item:hover {
-      color: rgba(255, 255, 255, 0.8);
-    }
+    .contact-item:hover { color: rgba(255, 255, 255, 0.8); }
 
     .contact-icon {
       width: 32px;
@@ -1036,30 +855,16 @@
       color: var(--accent-blue);
     }
 
-    .contact-icon svg {
-      width: 14px;
-      height: 14px;
-    }
+    .contact-icon svg { width: 14px; height: 14px; }
 
     @media (max-width: 1400px) {
-      .doctor-slide {
-        gap: 2vw;
-      }
-
-      .doctor-name {
-        font-size: clamp(2rem, 3.8vw, 3.8rem);
-      }
-
-      .doctor-title {
-        font-size: clamp(1.1rem, 1.8vw, 2rem);
-      }
+      .doctor-slide { gap: 2vw; }
+      .doctor-name { font-size: clamp(2rem, 3.8vw, 3.8rem); }
+      .doctor-title { font-size: clamp(1.1rem, 1.8vw, 2rem); }
     }
 
     @media (max-width: 1100px) {
-      body {
-        overflow-y: auto;
-      }
-
+      body { overflow-y: auto; }
       .doctor-slide {
         flex-direction: column;
         justify-content: flex-start;
@@ -1068,187 +873,51 @@
         padding: 110px 24px 200px;
         overflow-y: auto;
       }
-
-      .left-section,
-      .right-section {
+      .left-section, .right-section {
         width: 100%;
         max-width: 600px;
         text-align: center;
       }
-
-      .photo-container {
-        width: min(70vw, 380px);
-        height: min(80vw, 440px);
-      }
-
-      .right-section {
-        align-items: center;
-        padding-right: 0;
-      }
-
-      .doctor-name {
-        line-height: 1.1;
-      }
-
-      .doctor-name::after {
-        left: 50%;
-        transform: translateX(-50%);
-      }
-
-      .doctor-title {
-        justify-content: center;
-      }
-
-      .doctor-credentials {
-        justify-content: center;
-      }
-
-      .services {
-        width: 100%;
-      }
-
-      .service-item {
-        width: 100%;
-      }
-
-      .section-title {
-        justify-content: center;
-      }
-
-      .slide-counter {
-        bottom: 90px;
-        right: 20px;
-      }
-
-      .nav-dots {
-        bottom: 92px;
-      }
-
-      .nav-arrow-left {
-        left: 12px;
-      }
-
-      .nav-arrow-right {
-        right: 12px;
-      }
-
-      .top-logo {
-        width: 55px;
-        height: 55px;
-        max-width: 55px;
-        max-height: 55px;
-      }
+      .photo-container { width: min(70vw, 380px); height: min(80vw, 440px); }
+      .right-section { align-items: center; padding-right: 0; }
+      .doctor-name { line-height: 1.1; }
+      .doctor-name::after { left: 50%; transform: translateX(-50%); }
+      .doctor-title { justify-content: center; }
+      .doctor-credentials { justify-content: center; }
+      .services { width: 100%; }
+      .service-item { width: 100%; }
+      .section-title { justify-content: center; }
+      .slide-counter { bottom: 90px; right: 20px; }
+      .nav-dots { bottom: 92px; }
+      .nav-arrow-left { left: 12px; }
+      .nav-arrow-right { right: 12px; }
     }
 
     @media (max-width: 768px) {
-      .doctor-slide {
-        padding: 90px 16px 220px;
-        gap: 20px;
-      }
-
-      .photo-container {
-        width: min(80vw, 320px);
-        height: min(90vw, 360px);
-      }
-
-      .doctor-name {
-        font-size: clamp(1.8rem, 8vw, 3rem);
-        letter-spacing: -0.5px;
-      }
-
-      .doctor-title {
-        font-size: clamp(1rem, 4.5vw, 1.6rem);
-        margin-bottom: 18px;
-      }
-
-      .credential-card {
-        width: 100%;
-        justify-content: center;
-      }
-
-      .service-item {
-        padding: 14px 16px;
-      }
-
-      .service-icon {
-        width: 36px;
-        height: 36px;
-      }
-
-      .service-icon svg {
-        width: 16px;
-        height: 16px;
-      }
-
-      .service-text {
-        font-size: clamp(0.85rem, 3.5vw, 1.1rem);
-      }
-
-      .speciality-badge {
-        padding: 10px 18px;
-        font-size: 0.75rem;
-        letter-spacing: 1px;
-      }
-
-      .speciality-icon {
-        width: 32px;
-        height: 32px;
-      }
-
-      .speciality-icon svg {
-        width: 16px;
-        height: 16px;
-      }
-
-      .bottom-bar {
-        gap: 10px;
-        padding: 12px 14px;
-        flex-wrap: wrap;
-      }
-
-      .contact-item {
-        font-size: 0.68rem;
-        gap: 6px;
-      }
-
-      .contact-icon {
-        width: 28px;
-        height: 28px;
-      }
-
-      .contact-icon svg {
-        width: 12px;
-        height: 12px;
-      }
-
-      .nav-arrow {
-        width: 38px;
-        height: 38px;
-      }
-
-      .nav-arrow svg {
-        width: 16px;
-        height: 16px;
-      }
-
-      .top-logo {
-        width: 45px;
-        height: 45px;
-        max-width: 45px;
-        max-height: 45px;
-      }
-
-      .top-bar {
-        padding: 14px 16px;
-        max-height: 60px;
-      }
+      .top-bar { padding: 14px 16px; }
+      .top-logo { width: 50px; max-width: 50px; }
+      .doctor-slide { padding: 90px 16px 220px; gap: 20px; }
+      .photo-container { width: min(80vw, 320px); height: min(90vw, 360px); }
+      .doctor-name { font-size: clamp(1.8rem, 8vw, 3rem); letter-spacing: -0.5px; }
+      .doctor-title { font-size: clamp(1rem, 4.5vw, 1.6rem); margin-bottom: 18px; }
+      .credential-card { width: 100%; justify-content: center; }
+      .service-item { padding: 14px 16px; }
+      .service-icon { width: 36px; height: 36px; }
+      .service-icon svg { width: 16px; height: 16px; }
+      .service-text { font-size: clamp(0.85rem, 3.5vw, 1.1rem); }
+      .speciality-badge { padding: 10px 18px; font-size: 0.75rem; letter-spacing: 1px; }
+      .speciality-icon { width: 32px; height: 32px; }
+      .speciality-icon svg { width: 16px; height: 16px; }
+      .bottom-bar { gap: 10px; padding: 12px 14px; flex-wrap: wrap; }
+      .contact-item { font-size: 0.68rem; gap: 6px; }
+      .contact-icon { width: 28px; height: 28px; }
+      .contact-icon svg { width: 12px; height: 12px; }
+      .nav-arrow { width: 38px; height: 38px; }
+      .nav-arrow svg { width: 16px; height: 16px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-
-      *,
-      *::before,
-      *::after {
+      *, *::before, *::after {
         animation-duration: 0.01ms !important;
         transition-duration: 0.01ms !important;
       }
@@ -1265,7 +934,7 @@
 
     <div class="top-bar">
       <img
-        src="https://z-cdn-media.chatglm.cn/files/d196953b-e73f-4355-acc3-21db5a9e22d4.png?auth_key=1880060687-d49a38a2615547999ced9c3d5379156a-0-483af759fd16fe74c1d13c7f66b956e3"
+        src="https://z-cdn-media.chatglm.cn/files/f9160f0c-4faf-46ac-bfcf-d9aca75d1270.png?auth_key=1884900534-67b0268b44144af7b098f71f7c7ab833-0-add77187443bdc9073b7c304409eca53"
         alt="MTH MCH CENTER Logo" class="top-logo" />
       <div class="top-clock">
         <div class="clock-time" id="clockTime">--:--</div>
@@ -1288,8 +957,7 @@
 
     <div class="floating-shape pink" style="top:12%;right:8%;width:80px;height:80px;animation-delay:-2s;">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5">
-        <path
-          d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+        <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
       </svg>
     </div>
     <div class="floating-shape blue" style="top:55%;left:4%;width:60px;height:60px;animation-delay:-6s;">
@@ -1304,8 +972,7 @@
     </div>
     <div class="floating-shape blue" style="top:38%;right:42%;width:40px;height:40px;animation-delay:-4s;">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5">
-        <path
-          d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" />
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" />
       </svg>
     </div>
 
@@ -1318,14 +985,12 @@
     <div class="progress-bar" id="progressBar"></div>
 
     <button class="nav-arrow nav-arrow-left" id="prevBtn" aria-label="Previous doctor">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-        stroke-linejoin="round">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <polyline points="15 18 9 12 15 6" />
       </svg>
     </button>
     <button class="nav-arrow nav-arrow-right" id="nextBtn" aria-label="Next doctor">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-        stroke-linejoin="round">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <polyline points="9 18 15 12 9 6" />
       </svg>
     </button>
@@ -1342,16 +1007,13 @@
 
     <div class="bottom-bar">
       <div class="contact-item">
-        <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
-            <path
-              d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+        <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
           </svg></div>
         <div>+251 11 123 4567</div>
       </div>
       <div class="contact-item">
-        <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
+        <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10" />
             <line x1="2" y1="12" x2="22" y2="12" />
             <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
@@ -1359,16 +1021,14 @@
         <div>www.mthmchcenter.com</div>
       </div>
       <div class="contact-item">
-        <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
+        <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
             <circle cx="12" cy="10" r="3" />
           </svg></div>
         <div>behind Akaki kality Sub City, in front of courthouse, Addis Ababa</div>
       </div>
       <div class="contact-item">
-        <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
+        <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10" />
             <polyline points="12 6 12 12 16 14" />
           </svg></div>
@@ -1401,7 +1061,7 @@
         degree: 'MD OB/GYN',
         experience: '7+ Years Experience',
         speciality: 'OBSTETRICS & GYNECOLOGIST',
-        image: './Images/Dr.Esubalew.JPG',
+        image: 'https://z-cdn-media.chatglm.cn/files/8af697b9-ec01-42dc-8e1f-b4b16d0ef27d.JPG?auth_key=1884900534-07a26a50995d4fbda9e47ea3c41a0595-0-08fa9e668105b740a0cacf4cec3aca91',
         services: ['Pregnancy Care', 'Reproductive Health', 'Preventive Care']
       },
       {
@@ -1410,7 +1070,7 @@
         degree: 'Assistant Professor for Obstetrics and Gynecologist',
         experience: '10+ Years Experience',
         speciality: 'OBSTETRICS & GYNECOLOGIST',
-        image: './Images/Dr.Tsehaye.JPG',
+        image: 'https://z-cdn-media.chatglm.cn/files/f4959eb9-14a4-4c10-b1e9-3edcb57858c4.JPG?auth_key=1884900534-6ec91c7f32ac4fe08e2611e3926089cf-0-114c84bfdaa3d8d5d98b82ceecfff474',
         services: ['Pregnancy Care', 'Reproductive Health', 'Preventive Care']
       },
       {
@@ -1419,7 +1079,7 @@
         degree: 'BSc in Medicine',
         experience: '15+ Years Experience',
         speciality: 'GENERAL PRACTICE',
-        image: './Images/Dr.Araya.JPG',
+        image: 'https://z-cdn-media.chatglm.cn/files/a28ac256-78eb-4709-bd6d-7fdb4d5d0e48.JPG?auth_key=1884900534-51a8c745c1654ce08a80fff113f2fca9-0-500fe210bcb5f6eb4317be995b2862b3',
         services: ['Diagnostics & Prescription', 'Patient Management', 'Follow-up Care']
       },
       {
@@ -1428,7 +1088,7 @@
         degree: 'MD Pediatrics',
         experience: '5+ Years Experience',
         speciality: 'PEDIATRICS',
-        image: './Images/Dr.Alazar.JPG',
+        image: 'https://z-cdn-media.chatglm.cn/files/8788c0db-de15-4a44-8c64-cd5f0eb0a36b.JPG?auth_key=1884900534-99b66d701e10457f9e7856d9f0ed317f-0-2d0363b6acf47c329a329a25f8fb7ce9',
         services: ['Emergency Pediatric Support', 'Neonatal Care', 'Child Health & Development']
       }
     ];
@@ -1512,7 +1172,7 @@
     const slides = document.querySelectorAll('.doctor-slide');
     const dots = document.querySelectorAll('.nav-dot');
 
-    const slideDuration = 8000;
+    const slideDuration = 3000;
     let current = 0;
     let isTransitioning = false;
     let progressRAF = null;
@@ -1698,10 +1358,9 @@
     }
 
     updateClock();
-    setInterval(updateClock, 2000);
+    setInterval(updateClock, 1000);
 
     showSlide(0);
   </script>
 </body>
-
 </html>
